@@ -6,16 +6,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Penser Lucide</title>
   <style>
-    body {
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
       background: #111;
       color: #eee;
       font-family: sans-serif;
+      width: 100%;
+      height: 100%;
+      overflow-x: hidden;
+    }
+    body {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      min-height: 100vh;
-      margin: 0;
       padding: 2rem;
       text-align: center;
     }
