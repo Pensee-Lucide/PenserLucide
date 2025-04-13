@@ -65,16 +65,35 @@ function loop() {
 }
 loop();
 
-canvas.addEventListener("mousemove", (e) => {
+canvas.addEventListener("mousedown", (e) => {
   let rect = canvas.getBoundingClientRect();
   let x = Math.floor((e.clientX - rect.left) / (rect.width / cols));
   let y = Math.floor((e.clientY - rect.top) / (rect.height / rows));
-  for (let dx = -2; dx <= 2; dx++) {
-    for (let dy = -2; dy <= 2; dy++) {
+
+  for (let dx = -4; dx <= 4; dx++) {
+    for (let dy = -4; dy <= 4; dy++) {
       let nx = x + dx, ny = y + dy;
       if (nx >= 0 && nx < cols && ny >= 0 && ny < rows) {
-        energy[index(nx, ny)] += 0.2;
+        let dist = Math.sqrt(dx * dx + dy * dy);
+        let force = Math.max(0, 1 - dist / 4);
+        energy[index(nx, ny)] += 1.2 * force;
       }
     }
   }
 });
+
+canvas.addEventListener("mousemove", (e) => {
+  let rect = canvas.getBoundingClientRect();
+  let x = Math.floor((e.clientX - rect.left) / (rect.width / cols));
+  let y = Math.floor((e.clientY - rect.top) / (rect.height / rows));
+
+  for (let dx = -1; dx <= 1; dx++) {
+    for (let dy = -1; dy <= 1; dy++) {
+      let nx = x + dx, ny = y + dy;
+      if (nx >= 0 && nx < cols && ny >= 0 && ny < rows) {
+        energy[index(nx, ny)] += 0.05;
+      }
+    }
+  }
+});
+
