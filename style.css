@@ -26,13 +26,15 @@
   transform: scale(1.05);
   background-color: rgba(255, 255, 255, 1);
 }
-.libellule-bg {
+#libellule {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 40vmin;
-  opacity: 0.06;
+  width: 45vmin;
+  max-width: 700px;
+  opacity: 0.05;
+  z-index: -1;
   pointer-events: none;
-  z-index: -0.5;
 }
+
