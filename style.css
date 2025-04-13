@@ -6,7 +6,7 @@
   height: 100vh;
   z-index: -1;
   background: #111;
-  display: block;
+  /*display: block;*/
   pointer-events: auto;  /* ← essentiel pour capter les clics */
 }
 
@@ -25,4 +25,14 @@
 .button:hover {
   transform: scale(1.05);
   background-color: rgba(255, 255, 255, 1);
+}
+.libellule-bg {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40vmin;
+  opacity: 0.06;
+  pointer-events: none;
+  z-index: -0.5;
 }
