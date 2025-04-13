@@ -7,25 +7,6 @@
   z-index: -1;
   background: #111;
 }
-canvas#rheic-bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: -2;
-  display: block;
-}
-.overlay-img {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 60vmin;
-  opacity: 0.06;
-  pointer-events: none;
-  z-index: -1;
-}
 
 .button {
   background-color: rgba(255, 255, 255, 0.9); /* blanc semi-opaque */
